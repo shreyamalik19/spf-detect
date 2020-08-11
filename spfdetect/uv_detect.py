@@ -1,8 +1,4 @@
 import requests
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart as text
-import email.utils
-import smtplib
 import pgeocode
 
 api_key="a7d0ed68a5f3f24591d5f7754d6c8734"
