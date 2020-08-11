@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>SPFDetect</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  </head>
+
+  <body>
+
+    <div class="jumbotron container">
+
+      <h1 class="display-4">Do I need SPF today? </h1>
+      <br>
+      <h4>What is SPF?</h4>
+      <p> SPF stands for sun protection factor. </p>
+      <p> Higher SPF = better protection against UV (ultraviolet) rays. </p>
+      <p>SPF 50 allows one-fiftieth (2%) of UV rays to reach your skin.</p>
+      <h4>Benefits of SPF</h4>
+      <p> The key benefits of SPF are UV ray protection, reduced risks of skin cancer, and significant reduction of premature aging. </p>
+      <p> SPF is the single most important step in a daily skincare routine. </p>
+      <hr class="my-4">
+      <form action="{% url 'spfdetect:detect' %}" method="POST" name="detectionInput">
+        {% csrf_token %}
+
+        <label for="providedLocation">Enter your 5 Digit US-based Zip Code: </label>
+        <br>
+        <input type="text" id="providedLocation" name="loc" value={{form.providedZip}}>
+
+        <input type="submit" value="Submit">
+
+      </form>
+
+    </div>
+
+  </body>
+</html>
