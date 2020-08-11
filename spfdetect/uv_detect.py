@@ -1,5 +1,5 @@
 import requests
-import pgeocode
+import mypgeocode
 
 api_key="a7d0ed68a5f3f24591d5f7754d6c8734"
 #lat=32.7157
@@ -7,7 +7,7 @@ api_key="a7d0ed68a5f3f24591d5f7754d6c8734"
 
 def detect_zip(zip):
 
-    nomi = pgeocode.Nominatim('us')
+    nomi = mypgeocode.Nominatim('us')
     latlon = nomi.query_postal_code(zip)
     print ("latlon: ", latlon)
 
